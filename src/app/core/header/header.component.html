@@ -1,0 +1,20 @@
+<header class="header">
+  <a href="#" class="header__logo">
+    <img class="header__img header__img--desktop" src="assets/images/logo_granada.png" alt="">
+    <img class="header__img header__img--mobile" src="assets/images/icono_granada.png" alt="">
+  </a>
+  <label class="header__search-label">
+    <span class="header__search-title">Título</span>
+    <input class="header__search-input" [ngClass]="isSearchActive?'header__search-input--mobile-active':''" type="search">
+    <button class=" header__search-button" (click)="search()">
+      <em class="material-icons header__search-icon" aria-hidden="true" [ngClass]="isSearchActive?'header__search-icon--mobile-active':''">search</em>
+    </button>
+  </label>
+
+  <a href="#" class="header__button-create">
+    <span class="header__button-create-title--desktop">Crear nuevo</span>
+    <em class="material-icons header__button-create-title--mobile" aria-hidden="true">add</em>
+  </a>
+</header>
+
+
