@@ -1,0 +1,117 @@
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary-color, #F70041);
+  padding: 2rem;
+  height: 5rem;
+}
+
+.header__img {
+  max-height: 2.5rem;
+}
+
+.header__img--mobile {
+  display: none;
+}
+
+.header__search-label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-basis: 33%;
+}
+
+.header__search-title {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-color-white, #ffffff);
+}
+
+.header__search-input {
+  width: 0;
+  border: none;
+  border-radius: 2.5rem;
+  padding: 0.4rem;
+  margin-left: 0.8rem;
+  color: var(--text-color-gray-2, #707070);
+  flex: 1;
+}
+
+.header__search-button {
+  right: 0.6rem;
+  position: absolute;
+}
+
+.header__search-icon {
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: var(--text-color-gray, #b1b1b8);
+}
+
+.header__button-create:hover {
+  cursor: pointer;
+}
+
+.header__button-create-title--mobile {
+  display: none;
+}
+
+.header__info-book {
+  width: 100%;
+  font-weight: 400;
+  margin-left: 2rem;
+  color: var(--white-color, #ffffff);
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+
+  .header__img--mobile, .header__button-create-title--mobile {
+    display: unset;
+  }
+
+  .header__img--desktop, .header__button-create-title--desktop, .header__search-title {
+    display: none;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .header__search-label {
+    justify-content: flex-end;
+    flex: 1;
+  }
+
+  .header__button-create {
+    all: unset;
+    display: flex;
+  }
+
+  .header__button-create:hover {
+    cursor: pointer;
+  }
+
+  .header__search-icon, .header__button-create-title--mobile {
+    color: var(--text-color-white, #ffffff);
+  }
+
+  .header__search-input {
+    transition: 0.25s ease;
+    visibility: hidden;
+    transform: translateX(-0.8rem);
+    flex: 0;
+  }
+
+  .header__search-input--mobile-active {
+    visibility: visible;
+    transform: translateX(0);
+    flex: 1;
+  }
+
+  .header__search-icon--mobile-active {
+    color: var(--text-color-gray, #b1b1b8);
+  }
+}

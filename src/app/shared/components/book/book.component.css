@@ -1,0 +1,54 @@
+
+.book{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.book__figure{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.book__img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+
+}
+
+.book__description{
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.25s;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--text-color-white, #ffffff);
+}
+
+.book__description:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.book__title{
+  margin-top: 0.8rem;
+  font-size: 1.25rem;
+  color: var(--gray-color-2, #707070);
+}
+
+.book__date{
+  font-weight: 300;
+  font-size: 0.8rem;
+  color: var(--gray-color-2, #707070);
+}

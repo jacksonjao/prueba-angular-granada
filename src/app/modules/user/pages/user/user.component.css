@@ -1,0 +1,87 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+.user{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  min-height: 700px;
+  height: 90vh;
+}
+
+.user__left-section{
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  flex: 0.5;
+  text-align: center;
+  padding-bottom: 2rem;
+  background: var(--gray-ligth-color-2, #f8f8ff);
+  max-height: max-content;
+}
+
+.user__photo{
+  width: 100%;
+  flex: 1;
+  background: var(--primary-color, #F70041);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  font-weight: 800;
+  color: var(--white-color, #ffff);
+}
+
+.user__details{
+  padding-top: 2rem;
+  flex: 1;
+}
+.user__link-user-details{
+  color: var(--text-color-red, #F70041);
+  text-underline: #F70041;
+}
+
+.user__name, .user__last-name{
+  font-weight: 100;
+  font-size: 3rem;
+}
+
+.user__right-section{
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--gray-ligth-color, #E6E6ED);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.user__go-back{
+  color: var(--text-color-red, #F70041);
+  text-underline: #F70041;
+}
+.user__go-back{
+  cursor: pointer;
+}
+
+app-my-books{
+  width: 100%;
+  overflow: auto;
+
+}
+@media (max-width: 768px) {
+  .user{
+    flex-direction: column
+  }
+
+  .user__books{
+    flex-direction: column;
+  }
+}

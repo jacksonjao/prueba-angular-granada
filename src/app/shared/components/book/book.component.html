@@ -1,0 +1,11 @@
+<article class="book">
+  <figure class="book__figure" (click)="selectedBook.emit(book.ID)">
+    <img *ngIf="loading" src="assets/images/img_loading.gif" alt="loading" class="book__img" />
+    <img *ngIf="!!book.ID && !book.uploadImage" [hidden]="loading" (load)="onLoad()" [src]="img+book.ID" alt="book image" (error)="$event.target.src = 'assets/images/image_not_found.jpeg'" class="book__img" />
+    <img *ngIf="!!book.uploadImage" [hidden]="loading" (load)="onLoad()" [src]="book.uploadImage" alt="book image" (error)="$event.target.src = 'assets/images/image_not_found.jpeg'" class="book__img" />
+    <span class="book__description">{{book.Description}}</span>
+  </figure>
+  <h1 class="book__title">{{book.Title}}</h1>
+  <p *ngIf="!!book.ID" class="book__date">{{book.PublishDate | date:'y' }}</p>
+  <p *ngIf="!book.ID" class="book__date">Cargando fecha</p>
+</article>

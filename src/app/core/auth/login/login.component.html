@@ -1,0 +1,20 @@
+<section class="login">
+  <form class="login__form" novalidate [formGroup]="form">
+    <h4 class="login__title">INICIAR SESIÓN</h4>
+    <label class="login__input-label">
+      <input placeholder="Número de teléfono registrado" formControlName="phone">
+    </label>
+
+    <label class="login__input-label">
+      <input type="password" placeholder="Password" formControlName="password">
+    </label>
+    <br>
+    <button [disabled]="form.invalid" [ngClass]="form.invalid?'disable':''"  class="login__login-button granada-button"(click)="login(form.value)">Iniciar sesión</button>
+    <br>
+    <label class="error">{{errorMessage}}</label>
+    <br>
+    <br>
+    <a routerLink="/register" class="login__register-button" >¡Regístrate! :D</a>
+  </form>
+</section>
+

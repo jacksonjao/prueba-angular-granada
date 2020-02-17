@@ -1,0 +1,38 @@
+
+<form class="new-book__form" novalidate [formGroup]="form">
+  <div class="new-book__figure">
+  <img class="new-book__img" [src]="img" alt="">
+  </div>
+  <label class="new-book__input-label">
+    <span>Cargar imagen</span>
+    <input formControlName="uploadImage" [(ngModel)]="img">
+  </label>
+  <label class="new-book__input-label">
+    <span>*Título</span>
+    <input formControlName="Title">
+  </label>
+  <label  class="new-book__input-label">
+    <span>*Fecha</span>
+    <input type="date" formControlName="PublishDate">
+  </label>
+  <label class="new-book__input-label">
+    <span>Nº páginas</span>
+    <input formControlName="PageCount">
+</label>
+  <label class="new-book__input-label">
+    <span>*Descripción</span>
+  <input formControlName="Description">
+</label>
+  <label class="new-book__input-label">
+    <span>Extracto</span>
+    <textarea formControlName="Excerpt"></textarea>
+</label>
+  <br>
+  <div class="new-book__buttons">
+    <button class="new-book__button granada-button" (click)="cancel()">Cancelar</button>
+    <button [disabled]="form.invalid" [ngClass]="form.invalid?'disable':''" class="new-book__button granada-button" (click)="save()">Guardar</button>
+  </div>
+
+</form>
+<br>
+<label class="error">{{errorMessage}}</label>

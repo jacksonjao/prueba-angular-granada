@@ -1,0 +1,66 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+.dashboard{
+  width: 100%;
+  display: flex;
+}
+
+.dashboard__user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0.5;
+  text-align: center;
+  padding-bottom: 2rem;
+  background: var(--gray-ligth-color-2, #f8f8ff);
+
+}
+
+.dashboard__user-photo{
+width: 100%;
+  flex: 1;
+  background: var(--primary-color, #F70041);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  font-weight: 800;
+  color: var(--white-color, #ffff);
+}
+
+.dashboard__user-details{
+  padding-top: 2rem;
+  flex: 1;
+}
+.dashboard__link-user-details{
+  color: var(--text-color-red, #F70041);
+  text-underline: #F70041;
+}
+
+.dashboard__user-name, .dashboard__user-last-name{
+  font-weight: 100;
+font-size: 3rem;
+}
+
+.dashboard__books{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: var(--gray-ligth-color, #E6E6ED);
+}
+
+@media (max-width: 768px) {
+  .dashboard{
+    flex-direction: column
+  }
+
+  .dashboard__books{
+    flex-direction: column;
+  }
+}

@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+:root{
+   --primary-color: #F70041;
+  --white-color: #ffff;
+  --gray-color: #b1b1b8;
+  --gray-ligth-color: #e6e6ed;
+  --gray-ligth-color-2: #f8f8ff;
+  --gray-color-2: #707070;
+   --text-color-red: #f70041;
+   --text-color-white: #ffff;
+   --text-color-gray: #b1b1b8;
+   --text-color-gray-2: #707070;
+ }
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+button{
+  display: flex;
+  background: none;
+  border: none;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1,h2,h3,h4,h5,h6,p,button{
+  color: var(--text-color-gray-2, #707070)
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+  flex: 1;
+  padding: 1rem;
+}
+
+.granada-button{
+  font-weight: 100;
+  font-size: 1rem;
+  border-radius: 2.5rem;
+  color: var(--text-color-red, #F70041);
+  border: solid var(--gray-color, #b1b1b8) 0.15rem;
+  padding: 0.25rem 1.5rem;
+  background: var(--white-color, #ffffff);
+  -webkit-box-shadow:  0 0.25rem 0.625rem -0.25rem rgba(0,0,0,0.4);
+  -moz-box-shadow:  0 0.25rem 0.625rem -0.25rem rgba(0,0,0,0.4);
+  box-shadow: 0 0.25rem 0.625rem -0.25rem rgba(0,0,0,0.4);
+}
+
+.error{
+  font-size: 1rem;
+  color: var(--text-color-red);
+}
+
+.disable{
+  color: #707070;
+  opacity: 0.6;
+}
+
+.disable:hover{
+  cursor: unset;
+}
+
+input:valid{
+  border: 1px solid var(--white-color, #ffffff);
+}
+
+input:invalid, input:required {
+  border: 1px solid var(--primary-color, #F70041);
+}
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
