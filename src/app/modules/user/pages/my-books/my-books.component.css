@@ -1,0 +1,28 @@
+:host{
+  width: 100%;
+  overflow: auto;
+}
+
+.books__list{
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-around;
+  grid-gap: 3rem 0;
+}
+.books__item{
+  width: 11rem;
+  height: 19rem;
+}
+
+@media (max-width: 768px) {
+  .books__list{
+    grid-template-columns: repeat(1, auto);
+    justify-content: center;
+  }
+
+  .books__item{
+    width: 12rem;
+    height: 22rem;
+  }
+}

@@ -1,0 +1,26 @@
+<section class="user container">
+  <section class="user__left-section">
+    <span class="user__photo">{{user.firstName[0]}}{{user.lastName[0]}}</span>
+    <section class="user__details">
+      <h1 class="user__name">{{user.firstName}}</h1>
+      <h1 class="user__last-name">{{user.lastName}}</h1>
+      <br>
+      <p>{{user.email}}</p>
+      <br>
+      <p>{{user.phone}}</p>
+      <br>
+    </section>
+    <br>
+    <a class="user__go-back" (click)="location.back()">Volver</a>
+    <br>
+    <button class="granada-button" (click)="logOut()">Cerrar sesión</button>
+  </section>
+  <section class="user__right-section">
+    <app-counter-books *ngIf="router.url==='/user'" (click)="router.navigateByUrl('user/books')" [counter]="200"  title="Mis libros"></app-counter-books>
+    <a *ngIf="router.url==='/user'"  routerLink="/user/create" class="header__button-create granada-button">
+      <span class="header__button-create-title--desktop">Crear nuevo</span>
+    </a>
+    <router-outlet></router-outlet>
+  </section>
+
+</section>

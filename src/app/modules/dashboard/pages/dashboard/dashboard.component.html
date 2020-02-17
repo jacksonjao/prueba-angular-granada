@@ -1,1 +1,18 @@
+<section class="dashboard container">
+  <section class="dashboard__user">
+    <span class="dashboard__user-photo">{{user.firstName[0]}}{{user.lastName[0]}}</span>
+    <section class="dashboard__user-details">
+    <h1 class="dashboard__user-name">{{user.firstName}}</h1>
+    <h1 class="dashboard__user-last-name">{{user.lastName}}</h1>
+      <br>
+    <a class="dashboard__link-user-details" routerLink="/user">Detalles</a>
+    </section>
+    <br>
+    <button class="granada-button" (click)="logOut()">Cerrar sesión</button>
+  </section>
+  <section class="dashboard__books">
+  <app-counter-books [counter]="200" (click)="router.navigateByUrl('book')" title="Libros"></app-counter-books>
+    <app-counter-books [counter]="200" (click)="router.navigateByUrl('user/books')"  title="Mis libros"></app-counter-books>
 
+  </section>
+</section>

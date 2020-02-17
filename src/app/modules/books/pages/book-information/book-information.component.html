@@ -1,0 +1,14 @@
+<section class="container book-info">
+  <img *ngIf="loading" src="assets/images/img_loading.gif" alt="loading" class="book-info__img" />
+  <img [hidden]="loading" (load)="onLoad()" [src]="'https://picsum.photos/200/300/?image='+book.ID" alt="book image" (error)="$event.target.src = 'assets/images/image_not_found.jpeg'" class="book-info__img" />
+  <section class="book-info__detail">
+    <h1 class="book-info__title">{{book.Title}}</h1>
+    <h2 class="book-info__subtitle">{{book.Description}}</h2>
+    <p class="book-info__pages"><span class="book-info__marker">No. páginas:</span> {{book.PageCount}}</p>
+    <p class="book-info__date"><span class="book-info__marker">Fecha de publicación:</span> {{book.PublishDate | date}}</p>
+    <br>
+    <p class="book-info__paragraph"><span class="book-info__marker">Extracto:</span> {{book.Excerpt}}</p>
+    <br>
+    <a routerLink="/book" class="book-info__button-back granada-button" >Volver</a>
+  </section>
+</section>

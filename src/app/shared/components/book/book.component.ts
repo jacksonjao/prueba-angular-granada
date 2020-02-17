@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {BookModel} from '../../../../shared/models/book';
+import {BookModel} from '../../models/book.model';
 
 @Component({
   selector: 'app-book',
@@ -9,11 +9,15 @@ import {BookModel} from '../../../../shared/models/book';
 export class BookComponent implements OnInit {
   @Input() book: BookModel;
   @Output() selectedBook = new EventEmitter();
-  IMAGE_PATH = 'https://picsum.photos/200/300/?image=';
+  img = 'https://picsum.photos/200/300/?image=';
+  loading = true;
   constructor() {
   }
 
   ngOnInit() {
   }
 
+  onLoad() {
+    this.loading = false;
+  }
 }

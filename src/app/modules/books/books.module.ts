@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BooksComponent } from './pages/books/books.component';
-import {BOOKS_ROUTING} from './dashboard.routes';
-import { BookComponent } from './components/book/book.component';
-import {BooksService} from './services/books.service';
+import {BOOKS_ROUTING} from './books.routes';
+import { BookInformationComponent } from './pages/book-information/book-information.component';
+import {RouterModule} from '@angular/router';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [BooksComponent, BookComponent],
+  declarations: [BooksComponent, BookInformationComponent],
   imports: [
     CommonModule,
-    BOOKS_ROUTING
+    BOOKS_ROUTING,
+    RouterModule,
+    SharedModule
   ],
   providers: [
-    BooksService
   ]
 })
 export class BooksModule { }

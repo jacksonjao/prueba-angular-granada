@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataHeaderService} from '../services/data-header.service';
+import {DataHeaderModel} from '../../shared/models/data-header.model';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isSearchActive: boolean;
-  constructor() { }
+  dataHeader: DataHeaderModel;
+  constructor(private serviceHeader: DataHeaderService) {
+    this.dataHeader = {id: '', data: null};
+  }
 
   ngOnInit() {
+    this.serviceHeader.getData().subscribe(data => {
+      this.dataHeader = data;
+    });
   }
 
   search () {

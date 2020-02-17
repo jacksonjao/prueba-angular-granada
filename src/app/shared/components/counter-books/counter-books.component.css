@@ -1,0 +1,41 @@
+
+:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--white-color, #ffffff);
+  height: max-content;
+  padding: 1rem;
+  margin: 1rem;
+  -webkit-box-shadow:  0 0.25rem 0.625rem -0.25rem rgba(0,0,0,0.4);
+  -moz-box-shadow:  0 0.25rem 0.625rem -0.25rem rgba(0,0,0,0.4);
+  box-shadow: 0 0.25rem 0.625rem -0.25rem rgba(0,0,0,0.4);
+}
+
+:host:hover{
+  cursor: pointer;
+}
+
+.counter-books__icon{
+  width: 13rem;
+  height: 15rem;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 7rem;
+  background: var(--primary-color, #F70041);
+  color: var(--white-color, #ffffff);
+}
+
+.counter-books__count{
+  margin-top: 0.25rem;
+  font-size: 2rem;
+}
+
+
+.counter-books__count:last-child{
+  font-weight: 400;
+  font-size: 1rem;
+}

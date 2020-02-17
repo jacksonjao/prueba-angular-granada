@@ -1,20 +1,42 @@
 <header class="header">
-  <a href="#" class="header__logo">
-    <img class="header__img header__img--desktop" src="assets/images/logo_granada.png" alt="">
-    <img class="header__img header__img--mobile" src="assets/images/icono_granada.png" alt="">
+  <a routerLink="dashboard" class="header__logo">
+    <img *ngIf="dataHeader.id==='feed' || dataHeader.id===''" class="header__img header__img--desktop" src="assets/images/logo_granada.png" alt="">
+    <img *ngIf="dataHeader.id!=='feed' && dataHeader.id!==''" class="header__img header__img--desktop" src="assets/images/icono_granada.png" alt="">
+    <img *ngIf="dataHeader.id!==''" class="header__img header__img--mobile" src="assets/images/icono_granada.png" alt="">
+    <img *ngIf="dataHeader.id==''"class="header__img header__img--mobile" src="assets/images/logo_granada.png" alt="">
   </a>
-  <label class="header__search-label">
-    <span class="header__search-title">Título</span>
-    <input class="header__search-input" [ngClass]="isSearchActive?'header__search-input--mobile-active':''" type="search">
-    <button class=" header__search-button" (click)="search()">
-      <em class="material-icons header__search-icon" aria-hidden="true" [ngClass]="isSearchActive?'header__search-icon--mobile-active':''">search</em>
-    </button>
-  </label>
 
-  <a href="#" class="header__button-create">
-    <span class="header__button-create-title--desktop">Crear nuevo</span>
-    <em class="material-icons header__button-create-title--mobile" aria-hidden="true">add</em>
-  </a>
+  <ng-container [ngSwitch]="dataHeader.id">
+    <ng-container *ngSwitchCase="'feed'">
+      <label class="header__search-label">
+        <span class="header__search-title">Título</span>
+        <input class="header__search-input"
+               [ngClass]="isSearchActive?'header__search-input--mobile-active':''"
+               type="search">
+        <button class="header__search-button" (click)="search()">
+          <em class="material-icons header__search-icon"
+              aria-hidden="true"
+              [ngClass]="isSearchActive?'header__search-icon--mobile-active':''">search</em>
+        </button>
+      </label>
+      <a routerLink="/user/create" class="header__button-create granada-button">
+        <span class="header__button-create-title--desktop">Crear nuevo</span>
+        <em class="material-icons header__button-create-title--mobile" aria-hidden="true">add</em>
+      </a>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'infoBook'">
+      <h1 *ngIf="!!dataHeader.data" class="header__info-book">{{dataHeader.data.title}}, {{dataHeader.data.date | date}}</h1>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+
+    </ng-container>
+  </ng-container>
+
+
+
+
 </header>
 
 

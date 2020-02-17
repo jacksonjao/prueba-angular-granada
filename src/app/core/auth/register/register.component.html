@@ -1,0 +1,29 @@
+<section class="register">
+  <form class="register__form" novalidate [formGroup]="form">
+    <h4 class="register__title">REGISTRO</h4>
+
+    <label class="register__input-label">
+      <input  placeholder="Nombre" formControlName="firstName">
+    </label>
+    <label class="register__input-label">
+      <input placeholder="Apellido" formControlName="lastName">
+    </label>
+    <label class="register__input-label">
+      <input placeholder="Teléfono" formControlName="phone">
+    </label>
+    <label class="register__input-label">
+      <input  placeholder="Email" formControlName="email">
+    </label>
+
+    <label class="register__input-label">
+      <input type="password" placeholder="Password" formControlName="password">
+    </label>
+    <br>
+    <button [disabled]="form.invalid" [ngClass]="form.invalid?'disable':''"  class="register__register-button granada-button"(click)="register(form.value)">Registrarse</button>
+    <br>
+    <label class="error">{{errorMessage}}</label>
+    <br>
+    <br>
+    <a routerLink="/login" class="register__login-button">¡Inicia sesión! :D</a>
+  </form>
+</section>

@@ -2,7 +2,7 @@
 
   <ul class="books__list">
     <li class="books__item" *ngFor="let book of books">
-      <app-book (selectedBook)="selectedBook($event)" [book]="book"></app-book>
+      <app-book (selectedBook)="selectedBook($event)"  [book]="book"></app-book>
     </li>
   </ul>
 

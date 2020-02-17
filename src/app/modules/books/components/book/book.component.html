@@ -1,8 +1,0 @@
-<article class="book">
-  <figure class="book__figure" (click)="selectedBook.emit(book.ID)">
-    <img [src]="IMAGE_PATH+book.ID" (error)="$event.target.src = 'assets/images/image_not_found.jpeg'" alt="" class="book__img">
-    <span class="book__description">{{book.Description}}</span>
-  </figure>
-  <h1 class="book__title">{{book.Title}}</h1>
-  <p class="book__date">{{book.PublishDate | date:'y' }}</p>
-</article>
